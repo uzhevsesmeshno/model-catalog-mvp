@@ -3,11 +3,41 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 const models = [
-  { id: 1, name: 'ARINA', eyeColor: 'blue', height: 175, image: '/models/arina.jpg' },
-  { id: 2, name: 'KATERINA', eyeColor: 'green', height: 178, image: '/models/katerina.jpg' },
-  { id: 3, name: 'DALIA', eyeColor: 'brown', height: 173, image: '/models/dalia.jpg' },
-  { id: 4, name: 'ALI OSK', eyeColor: 'blue', height: 180, image: '/models/aliosk.jpg' },
-  { id: 5, name: 'KATRIN', eyeColor: 'grey', height: 176, image: '/models/katrin.jpg' },
+  {
+    id: 1,
+    name: 'ARINA',
+    eyeColor: 'blue',
+    height: 175,
+    images: ['/models/arina/1.jpg', '/models/arina/2.jpg'],
+  },
+  {
+    id: 2,
+    name: 'KATERINA',
+    eyeColor: 'green',
+    height: 178,
+    images: ['/models/katerina/1.jpg', '/models/katerina/2.jpg'],
+  },
+  {
+    id: 2,
+    name: 'KATERINA',
+    eyeColor: 'green',
+    height: 178,
+    images: ['/models/katerina/1.jpg', '/models/katerina/2.jpg'],
+  },
+  {
+    id: 2,
+    name: 'KATERINA',
+    eyeColor: 'green',
+    height: 178,
+    images: ['/models/katerina/1.jpg', '/models/katerina/2.jpg'],
+  },
+  {
+    id: 2,
+    name: 'KATERINA',
+    eyeColor: 'green',
+    height: 178,
+    images: ['/models/katerina/1.jpg', '/models/katerina/2.jpg'],
+  }
 ];
 
 export default function Home() {
@@ -29,7 +59,7 @@ export default function Home() {
       </Head>
       <div className="p-6">
         <header className="flex justify-between mb-4">
-          <h1 className="text-2xl font-bold">OpenUp Models</h1>
+          <h1 className="text-2xl font-bold">Danaya Models</h1>
           <Link href="/cart" className="underline">
             Cart ({cart.length})
           </Link>
@@ -49,7 +79,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {filtered.map((model) => (
             <div key={model.id} className="border rounded-xl overflow-hidden shadow-md">
-              <img src={model.image} alt={model.name} className="w-full h-80 object-cover" />
+     <img src={model.images[0]} alt={model.name} className="w-full h-80 object-cover" />
               <div className="p-4">
                 <h2 className="text-lg font-semibold">{model.name}</h2>
                 <p>Eye Color: {model.eyeColor}</p>
